@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>exercise1</title>
+        <link rel="stylesheet" href="exercise1.css">
+        
+    </head>
+    <body class="all">
+        <header>
+            <p>header>p headerは導入コンテンツやロゴ、検索フォームなどを含めることが多い。
+                <br>pは段落のまとまりを意味する。このファイルは34種類のタグを用いて書かれている。<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element#href">a 参考：MDN Web Docs</a></p>
+        </header>
+        <main>
+            <h1>h1 メインタイトルなど</h1>
+            <p>mainは主要なコンテンツを含む。具体的にはヘッダーやナビゲーション、検索フォームやフッターなどのWebサイト内の各ページで繰り返し使われるものを除いた部分を指す。
+                <br>また、<em>セクショニングコンテンツ</em> ではないため、文書のアウトラインに影響を与えない。<br>emは強調を、strongはより強い強調を表す。通常のブラウザではemは斜体、strongは太字で表される。</p>
+                <!-- セクショニングコンテンツについて調べきれていないため、そのことがわかるように今回はemを使いました。 -->
+            <h2>h2 サブタイトルなど</h2>
+            <article>
+                <h3>article>h3 小見出し１</h3>
+                <p>articleはそれ自体で自己完結しており、(集合したものの中で)個別に配信や再利用を行うことを意図した構成物を表す。</p>
+                <!-- 2/19変更点：senction要素の親要素としてdivを追加 (articleにdisplay:flex;を指定してもうまくいかなかったのはarticleの子要素にh3,p,sectionが含まれるため？) -->
+                <div class="sections">
+                    <section class="section1">
+                        <h4>section>h4 小見出し２</h4>
+                        <p>sectionは文書の中で単独のセクション (区間) を表す。<br>セクションを表現するより意味的に具体的な要素がない場合に使用する。</p>
+                        <ol>
+                            <li>ol>li1 ulは順序つきリスト。</li>
+                            <li>ol>li2 liはリスト項目を表す。</li>
+                            <li>ol>li3 ol内において、liは数字や文字による連番のリストマーカーを伴って表示される。</li>
+                            <li>ol>li4</li>
+                            <li>ol>li5</li>
+                        </ol>
+                    </section>
+                    <section class="section2">
+                        <h4>section>h4 小見出し２</h4>
+                        <p>必ずではないが、sectionは通常の場合見出しを含む。(=<em>セクショニングコンテンツ</em> )</p>
+                        <ul>
+                            <li>ul>li1 liは順序なしリスト。</li>
+                            <li>ul>li2 ul内において、liは行頭文字を伴って表示される。</li>
+                            <li>ul>li3</li>
+                            <li>ul>li4</li>
+                            <li>ul>li5</li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+            <table>
+                <caption>captionで表にタイトルが付けられる。</caption>
+                <colgroup>
+                    <col span="3" class="cap-1">
+                    <col span="2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>thead>tr>th1<br>theadは列の見出しを定義するための<br>行のセットを定義する。</th>
+                        <th>thead>tr>th2<br>trは表内のセルの行を定義する。</th>
+                        <th>thead>tr>th3<br>thは見出しセル。</th>
+                        <th colspan="2">thead>tr>th colspan="2"<br>th、tdはcolspan="2"で2列のまたがりを指定出来る。</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>tbody>tr>td1<br>tbodyは表の一連の行(tr要素)を内包する。</td>
+                        <td>tbody>tr>td2<br>tdはデータセル。</td>
+                        <td>tbody>tr>td3<br>rowspan属性を使用することで<br>複数の行にまたがりも指定できる。</td>
+                        <td>tbody>tr>td4<br>セルa</td>
+                        <td>tbody>tr>td5<br>セルb</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>tfoot>tr>th1<br>tfootは表の一連の列を総括するための行のセットを定義する。</th>
+                        <th>tfoot>tr>th2<br>HTML5においてtfootは右セル記載の<br>各要素の後ろに配置されなければならない。</th>
+                        <th>tfoot>tr>th3<br>caption、colgroup、<br>thead、tbody、tr</th>
+                        <th>tfoot>tr>th4<br>HTML4では右セル記載要素の後方に<br>tfootを配置してはいけなかったため注意が必要。</th>
+                        <th>tfoot>tr>th5<br>tfoot、tbody、tr</th>
+                    </tr>
+                </tfoot>
+            </table>
+            <button id="button">確認完了</button>
+        </main>
+        <script src="exercise1.js"></script>
+    </body>
+</html>
