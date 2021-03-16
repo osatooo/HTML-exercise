@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>exercise2</title>
+        <link rel="stylesheet" href="exercise2.css">
+    </head>
+    <body>
+        <header>
+            <p>HTMLタグ自主学習ファイル”exercise"の2つ目。nav、dl、figure、addressなど新たに15種類のタグを用いて作成しました。</p>
+            <nav>
+                <ul class="navi">
+                    <li><a href="#">nav>ul>li<br>navは主要なリンクのみを入れるのが望ましい。</a></li>
+                    <li><a href="#">nav>ul>li<br>navは目次や索引などによく使われる。</a></li>
+                    <li><a href="#">nav>ul>li<br>navはナビゲーションリンクを表す。</a></li>
+                    <li><a href="#">nav>ul>li<br>navはセクショニングコンテンツ。</a></li>
+                    <li><a href="#">nav用いてサイド/ナビゲーションバー、ドロップダウンメニューを作成することもできる。</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <hgroup>
+                <h1>hgroupはh1〜h6の見出しを理論的にグループ化するもの。</h1>
+                <h2>実装はされているもののHTML5(W3C)仕様からは削除されており、hgrouを使用せずにマークアップすることが望ましい。</h2>
+            </hgroup>
+            <div class="difinition">
+                <h3>定義リスト＜dl＞</h3>
+                <dl>
+                    <dt>dl>dt1 dlは説明リストを表す。</dt>
+                    <dd>dl>dd1 dlは主に用語集やメタデータの表示に使用される。</dd>
+                    <dt>dl>dt2 dtは説明されるべき用語を示す。</dt>
+                    <dd>dl>dd2 ddは先行する用語(dt)の説明、定義、値などを付与する。</dd>
+                    <dt>dl>dt3 (例)水餃子</dt>
+                    <dd>dl>dd3-1 (例)中華料理の一種。日本では焼き餃子が主流だが、中国では水餃子が主流である。</dd>
+                    <dd>dl>dd3-2 (例)生の餃子を茹でてポン酢や醤油などをつけて食べる。</dd>
+                </dl>
+            </div>
+            <div class="figures">
+                <h3>図要素＜figure＞</h3>
+                <p>figure 図表などの自己完結型のコンテンツを表す。
+                <br>mapとarea セットで用いてクリック可能な領域を表し、ハイパーテキストリンクと関連付けて遷移できるようにする。</p>
+                <figure>
+                    <div class="fig1">
+                        <map name="primary">
+                            <area shape="circle" coords="100,80,70" href="#" alt="area 該当エリアの位置を定める。">
+                        </map>
+                        <img usemap="#primary" src="https://1.bp.blogspot.com/-uY5u8J1uD9U/XkZc2mZfYBI/AAAAAAABXQg/cA3oJCTvgYI6ylfBdb2RGSK_24wi3lcKQCNcBGAsYHQ/s1600/food_character_gyouza_suigyouza.png"
+                                alt="img 画像、alt 画像の説明" class="suigyouza">
+                        <figcaption>figc figure内にある要素を説明するキャプションを表す。</figcaption>
+                    </div>
+                    <div class="quote">
+                        <blockquote cite="https://developer.mozilla.org/ja/docs/Web/HTML/Element/blockquote">
+                            <p>blockquote HTML の＜blockquote＞要素(HTML ブロック引用要素)は、内包する要素の文字列が引用文であることを示します。通常、字下げを伴ってレンダリングされます(整形方法については注意の項を参照してください)。</p>
+                        </blockquote>
+                        <figcaption>figcaptionにはcite要素により引用元の文書のタイトルなどを明示できる。<cite>＜blockquote＞:ブロック引用要素</cite></figcaption>
+                    </div>
+                </figure>
+            </div>
+        </main>
+        <footer>
+            <address>
+                <div>
+                    <p>address 連絡先を提供していることを示す。文脈で適切であればどのような形でもよく、あらゆる形の連絡先情報(住所、URL、メールアドレス、電話番号、ソーシャルメディアのアカウント、地理上の座標など)を含めることができる。address内は斜体で表示される（ブラウザによる）。</p>
+                    <p>
+                        <a href="#">住所</a>
+                        <a href="#">電話番号一覧</a>
+                    </p>
+                    <p>iframe 入れ子になった閲覧コンテキストを表現し、現在の HTML ページに他のページを埋め込む。</p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8278534024653!2d139.76493075058028!3d35.68124053748219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1615883325324!5m2!1sja!2sjp"
+                        width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </address>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/">
+        <title>exercise3</title>
+    </head>
+    <style>
+        hr{
+            border: 1px solid #52b3a2;
+        }
+        aside>p{
+            border-left: 10px solid #52b3a2;
+            padding-left: 10px;        
+        }
+        kbd{
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 2px 4px;
+            background-color: #eee;
+            box-shadow: 2px 2px 3px  #aaa;
+        }
+        code{
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        dl{
+            margin-left: 30px;
+        }
+        dd{
+            margin-bottom: 10px;
+        }
+        .bdi{
+            display: table;
+            width: 60%;
+            margin: 0 20%;
+        }
+        .usebdi{
+            display: table-cell;
+        }
+        u {
+            text-decoration: underline wavy red;
+        }
+        pre{
+            display: table;
+            border-collapse: separate;
+            border-spacing: 30px 0px;
+        }
+        .usepre{
+            display: table-cell;
+        }
+    </style>
+    <body>
+        <aside>
+            <p>HTMLタグ自主学習ファイル"exercise"第3弾。新たに25種類のタグを用いて作成しました。<br>
+                &lt;aside&gt;要素はメインコンテンツと間接的な関係のみを持つ文書、関連記事情報やコラムなどが入る。</p>
+        </aside>
+        <main>
+            <p>&lt;head&gt;に&lt;base&gt;を組み込むことで、相対パスの基点が変わる（絶対パスへの影響はない）。baseタグは文書1つにつき1つまで有効。</p>
+            <p>
+                <small>
+                    (<kbd>Tab</kbd> + <kbd>Enter</kbd> で詳細を表示できます。)
+                </small>
+            </p>
+        <details>
+            <summary>bdiについて</summary>
+            <p>&lt;bdi&gt;はアラビア語など右書き文字や書字方向が不明な文を表す場合に使用する。<br>異なる文字方向を持つ周囲からこのテキストが独立していることを指示し、ウェブサイトが動的にテキストを表示する場合に役立つ。</p>
+            <div class="bdi">
+            <div class="usebdi">
+                <p>例）&lt;bdi&gt;を用いない場合</p>
+                <ul>
+                    <li>programming:2021/02/24</li>
+                    <li>プログラミング:2021/02/24</li>
+                    <li>البرمجه:2021/02/24</li>
+                </ul>
+            </div>
+            <div class="usebdi">
+                <p>例）&lt;bdi&gt;を用いた場合</p>
+                <ul>
+                    <li>programming:2021/02/24</li>
+                    <li>プログラミング:2021/02/24</li>
+                    <li><bdi>البرمجه</bdi>:2021/02/24</li>
+                </ul>
+            </div>
+            </div>
+        </details>
+        <hr>
+        <details>
+            <summary>bdoについて</summary>
+            <p>&lt;bdo&gt;は、現在の文字列の方向を上書きし、文字列の方向を変えるときに用いる。&lt;bdo&gt;は、方向を<abbr title="derectryの略">dir</abbr>を用いて指定する必要がある。</p>
+            <ol>
+                <li><bdo dir="ltr">書字方向を左から右に設定した文。</bdo></li>
+                <li><bdo dir="rtl">書字方向を右から左に設定した文。</bdo></li>
+            </ol>
+        </details>
+        <hr>
+        <details>
+            <summary>iと関連要素について</summary>
+            <p>i要素は他と区別されるテキスト(要素思考、固有名詞、他言語によるフレーズなど)を含む。日本語の「」のような使い方をする。（例）私は<i>うわ！</i>と叫びそうになった。</p>
+                <p>ただし、以下のように他の要素でより適切にマークアップされる場合はそれを用いる。</p>
+                <dl>
+                    <dt>強調を表す場合は&lt;em&gt;を使用する。</dt>
+                        <dd>例）このみかんは<em>日本一</em>に輝いた。</dd>
+                    <dt>重要性を表す場合は&lt;strong&gt;を使用する。</dt>
+                        <dd>例）合格ラインは<strong>80点</strong>だ。</dd>
+                    <dt>関連性を表す場合は&このlt;mark&gt;を使用する。</dt>
+                        <dd>例）<mark>mark</mark>は検索結果などと関連する部分のハイライト表示を可能にする。</dd>
+                    <dt>書籍、演劇、音楽などの作品名を表す場合は&lt;cite&gt;を使用する。</dt>
+                        <dd>例）この文章は<cite><a href="cite">MDN Web Docs</a></cite>から引用された。</dd>
+                    <dt>用語の定義のインスタンスを表す場合は&lt;dfn&gt;を使用する。</dt>
+                        <dd>例）<strong><dfn title="definition要素">dfn要素</dfn></strong>は要素が定義された言葉であることを示す。用語解説などの際に用いる。</dd>
+                    <dt>略語の完全形を示す場合は&lt;abbr&gt;を用いる。</dt>
+                        <dd>例）<abbr title="personal computer">pc</abbr>は便利だ。</dd>
+                    <dt>要素の内容に読み手の注意を惹きたいが特別な重要性がない場合は&lt;b&gt;を使用する。</dt>
+                        <dd>例）この<b>みかん</b>はあの<b>りんご</b>より甘い。</dd>
+                    </dl>
+        </details>
+        <hr>
+        <details>
+            <summary>文字の修飾について</summary>
+            <dl>
+                <dt>ルビをつけたい場合は<code>&lt;ruby&gt;&lt;rp&gt;代替表示用括弧&lt;rp&gt;&lt;rt&gt;ルビ&lt;rt&gt;&lt;rp&gt;代替表示用括弧&lt;rp&gt;&lt;ruby&gt;</code>を使用する。</dt>
+                    <dd>例）<ruby>骨<rp>(</rp><rt>こつ</rt><rp>)</rp>
+                            粗<rp>(</rp><rt>そ</rt><rp>)</rp>
+                            鬆<rp>(</rp><rt>しょう</rt><rp>)</rp>
+                            症<rp>(</rp><rt>しょう</rt><rp>)</rp>
+                        </ruby>（文字ごとにルビを振った）、
+                        <ruby>骨粗鬆症<rp>(</rp><rt>こつそしょうしょう</rt><rp>)</rp></ruby>（全体にルビを振った）
+                    </dd>
+                <dt>取り消し線を引きたい場合は&lt;s&gt;を使用する。</dt>
+                    <dd>例）<s>限定100個！早い者勝ち！</s> 売り切れました。</dd>
+                <dt>下付き文字として表示したい場合は&lt;sub&gt;を使用する。</dt>
+                    <dd>例）C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>（グルコース）</dd>
+                <dt>上付き文字として表示したい場合は&lt;sup&gt;を使用する。</dt>
+                    <dd>例）(x+p)<sup>2</sup> + (y+q)<sup>2</sup> = r<sup>2</sup></dd>
+                <dt>非言語的に注釈があること（綴りエラーなど）を示したい場合は&lt;u&gt;を用いる。</dt>
+                    <dd>例）<u>htlm</u>はウェブページを作成するために開発されたマークアップ言語です。</dd>
+            </dl>
+        </details>
+        <hr>
+        <details>
+            <summary>preとcodeについて</summary>
+            <pre>
+            <div class="usepre">
+                                        ( preは整形済みテキスト（preformatted text）を表す。                                                      )
+                                        ( アスキーアート作品 や ソースコードをその形のままコードとして表示させたい場合に用いる。  )
+                /\__/\          ○ 
+            (=  ・ ・  =)  。⚪︎
+            ＾＾＾＾＾
+            </div>
+            <code class="usepre">
+                例）
+                &lt;code&gt;
+                    &lt;h1&gt;code&lt;/h1&gt;
+                    &lt;h2&gt;文字列が1行のソースコードであることを示す。&lt;/h2&gt;
+                    &lt;p&gt;複数行のコードを表すときは、&lt;pre&gt;要素の中に&lt;code&gt;要素を入れる。&lt;/p&gt;          
+                &lt;/code&gt;
+            </code>
+            </pre>
+        </details>
+        </main>
+    </body>
+</html>

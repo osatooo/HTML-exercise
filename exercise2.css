@@ -1,0 +1,129 @@
+p{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    background-color: rgb(255, 239, 219);
+}
+
+header{
+    background-color: rgb(255, 224, 185);
+    text-align: center;
+}
+
+.navi{
+    height: 100px;
+    display: table;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 10px;
+    padding-inline-start: 0;
+}
+
+.navi>li{
+    display: table-cell;
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navi>li>a{
+    display: block;
+    background-color: rgb(255, 207, 149);
+    text-decoration: none;
+    border: 2px solid rgb(117, 53, 0);
+}
+
+a:link{
+    color: black;
+}
+
+a:visited{ 
+    color: rgb(117, 53, 0);
+}
+
+hgroup{
+    border-left: 10px solid rgb(255, 207, 149);
+    padding-left: 10px;
+    margin-left: 20px;
+}
+
+.difinition{
+    width: 80%;
+    margin-left: 10%;
+}
+
+dl{
+    padding: 20px 30px;
+    border: 3px solid rgb(255, 207, 149);
+    box-sizing: border-box;
+    background-color: white;
+}
+
+dt{
+    display: inline-block;
+    
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+}
+dt:nth-child(1){
+    margin-top: 0;
+}
+
+.figures{
+    width: 80%;
+    margin: 50px 0 0 10%;
+}
+
+figure{
+    padding: 20px 30px;
+    border: 3px solid rgb(255, 207, 149);
+    box-sizing: border-box;
+    background-color: white;
+    margin: 1em 0 0 0;
+    display: flex;
+}
+
+.fig1, .quote{
+    width: 50%;
+    margin: 0 3%;
+}
+
+.suigyouza{
+    width: 70%;
+    margin: 0 15%;
+}
+
+blockquote{
+    padding: 1em;
+    background-color: gainsboro;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+footer{
+    margin-top: 30px;
+    background-color:rgb(255, 224, 185);
+}
+
+address{
+    display: flex;
+    padding: 10px 20px;
+}
+
+address>div{
+    width: 80%;
+    margin-right: 3%;
+}
+address>p{
+    margin: 10px 0;
+}
