@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+h1,p,ul,li{
+    margin: 0;
+}
+
+header{
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+#dialogs{
+    height: unset;
+}
+
+#dialog1{
+    margin: 20px auto;
+    
+}
+
+#close{
+    display: block;
+    margin-left: auto;
+}
+
+#dialog2{
+    top: 200px;
+    text-align: center;
+    width: 260px;
+    height: 75px;
+}
+
+#dialog3{
+    text-align: center;
+    width: 260px;
+    height: 75px;
+}
+
+summary{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.ad-data{
+    margin-left: 20px;
+}
+
+.ex-data{
+    margin: 10px auto 20px 20px;
+}
+
+.ex-time{
+    margin: 10px auto 20px 20px;
+}
+
+.andmore>li{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.andmore>li>p{
+    font-size: 1.0rem;
+    font-weight: normal;
+}
+
+figcaption{
+    font-size: medium;
+    font-weight: normal;
+}
+
+video{
+    width: 300px;
+}
+
+object{
+    background-color: red;
+    display: block;
+}
+
+img{
+    height: 300px;
+}
+
+.datalist{
+    margin: 30px;
+}
+
+form{
+    margin: 10px;
+    font-weight: 500;
+}
+
+.meter{
+    font-weight: 500;
+}
+
+.meter>h1{
+    font-size: 1.25rem;
+}
+
+#textarea{
+    margin: 20px;
+    width: 100%;
+}
+
+.span{
+    color: rgb(255, 158, 158);
+}
+
+.jugem{
+    width: 32rem;
+    background-color: rgb(255, 158, 158);
+    margin-bottom: 10px;
+}
+
+.long-url{
+    width: 32rem;
+    background-color: lightgoldenrodyellow;
+}
+

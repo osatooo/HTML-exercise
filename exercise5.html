@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise5</title>
+    <style>
+        #sample{
+            width: 210px;
+            margin-top: 80px;
+            padding-left: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform : translate(-50%,-50%);
+            border: 50px solid coral;
+        }
+    </style>
+</head>
+<body>
+    <p>HTMLタグ自主学習ファイル"exercise"第5弾にして最終回。新たに2種類のタグを用いて作成しました。exercise内で使用したHTMLタグ合計106。</p>
+    <p>（今回はデバイスの縦方向・横方向で枠の色が変わります。）</p>
+    <template id="ex-template">
+        <h1>template は、スクリプトで利用される要素のテンプレートを定義する際に用いられる。</h1>
+        <p>templateタグで囲まれた部分は、ページを表示した際には表示されない。JavaScript等のスクリプトの中で複製、値を設定、挿入されることで表示されるようになる。</p>
+        <p>slot要素は、ShadowDOMの外側から内側に、後から要素（複数可）を挿し込むための口の役割を果たす。<br>見栄え(スタイル)がカプセル化されたtemplate要素を用いて、データを表示していくことが可能。</p>
+    </template>
+
+
+    <template id="sample-template">
+        <h1><slot name="sample-contents01">タイトル</slot></h1>
+        <div class="contents">
+        <slot name="sample-contents02"><p>コンテンツ</p></slot>
+        </div>
+    </template>
+    
+    <div id="sample">
+        <span slot="sample-contents01">持ち物リスト</span>
+        <ul slot="sample-contents02">
+            <li>飲み物</li>
+            <li>お菓子（500円まで）</li>
+        </ul>
+    </div>
+    
+    
+    <script src="exercise5.js"></script>
+</body>
+</html>

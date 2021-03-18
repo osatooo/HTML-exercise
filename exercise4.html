@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>exercise4</title>
+        <link rel="stylesheet" href="exercise4.css">
+    </head>
+    <body>
+        <header>
+            <p>HTMLタグ自主学習ファイル”exercise"第4弾。新たに33種類のタグを用いて作成しました。 </p>
+            <p>
+                progress要素はタスクの進捗状況を表す。
+                <label for="file">進捗状況:</label>
+                <progress id="file" max="100" value="90"> 90% </progress>
+            </p>
+        </header>
+        <div id="dialogs">
+            <h1>ダイアログ</h1>
+            <p>ダイアログには、表示中もダイアログ以外のウインドウの操作ができる <button id="modeless-show">モードレスダイアログ</button> と、表示中はダイアログ以外の操作ができなくなる <button id="modal-show">モーダルダイアログ</button> がある。</p>
+            <dialog open id="dialog1">
+                <p>dialog要素①  &lt;dialog&gt; は、ダイアログボックスや消すことができるアラートなどをHTMLで簡単に表現するためのもの。</p>
+                <p>open属性を用いることで、予め表示しておくことができる。</p>
+                <button id="close">閉じる</button>
+            </dialog>
+            <dialog id="dialog2">
+                <p><label>dialog要素②</label></p>
+                <p>これはモードレスダイアログです。</p>
+                <button id="modeless-ok">OK</button>
+            </dialog>
+            <dialog id="dialog3">
+                <p><label>dialog要素③</label></p>
+                <p>これはモーダルダイアログです。</p>
+                <button id="modal-ok">OK</button>
+            </dialog>
+        </div>
+
+        <hr>
+
+        <details>
+            <summary>dataの付与</summary>
+            <div class="ad-data">
+                <p>data要素は、与えられたコンテンツの断片を必須であるvalue属性で機械可読な情報にリンクする。例えば、商品名に商品番号をつけるなど。</p>
+                <div class="ex-data">   
+                    <p>例）入荷情報</p>
+                    <ul>
+                        <li><data value="308">ミルクココア</data></li>
+                        <li><data value="309">カカオ70%ココア</data></li>
+                        <li><data value="310">ピュアココア</data></li>
+                    </ul>
+                </div> 
+                <p>time要素は、値が日時や時間に関連する場合は、dataの代わりにtimeを用いる。datetime属性を使用する。検索エンジンの結果改善やリマインダーなどの独自機能に有効。</p>
+                <div class="ex-time">
+                    <p>例）この商品は<time datatime="2021-03-04 10:30:00">3月4日</time>に入荷します。</p>
+                    <p>例）この試験は<time datetime="4H30M">4時間半</time>に渡って行われます。</p>
+                </div>
+            </div>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>画像や埋め込み要素</summary>
+            <ul class="andmore">
+                <li>audio要素
+                    <p>文書内に音声コンテンツを埋め込むことができる。</p>
+                    <figure>
+                        <figcaption>レトロゲームセンター <cite><a href="https://amachamusic.chagasi.com/index.html">甘茶の音楽工房</a></cite> より</figcaption>
+                        <audio controls src="https://amachamusic.chagasi.com/mp3/retrogamecenter.mp3"> <track kind="captions" label="kind = captionは難聴または消音時用の字幕をさす。labelはトラックのタイトルが入る。"> レトロゲームセンター</audio>
+                    </figure>
+                </li>
+                <li>video要素
+                    <p>文書中に映像再生に対応するメディアプレイヤーを埋め込むことができる。(PexelsのJames Cheneyによる動画)</p>
+                    <video controls src="production ID_4517394.mp4">sample video</video>
+                </li>
+                <li>embed要素
+                    <p>外部のコンテンツを文書中の指定された場所に埋め込むことができる。ただし、現在はほとんどのブラウザーがプラグイン対応を非推奨にして削除しているため、平均的に使えるサイトを作るためには使用しないことが望ましい。</p>
+                    <embed src="https://www.pexels.com/ja-jp/video/4517394/" type="video/mp4">
+                </li>
+                <li>object要素
+                    <p>外部リソースを埋め込むことができる。</p>
+                    <object data="https://helpx.adobe.com/jp/acrobat/kb/cq07071635/_jcr_content/main-pars/download-section/download-1/file.res/sample.pdf" type="application/pdf" width="250" height="300"><param name="表示確認用サンプル"></object>
+                </li>
+                <li>picture要素
+                    <p>0個以上のsource要素と1つのimg要素を含み、様々な画面や端末の条件に応じた画像を表示する。picture要素は様々なmediaの条件に合わせて画像の切り抜きや変更が可能(例えば小さな画面では、詳細すぎない・より簡単な版の画像を読み込むなど)。</p>
+                    <p>ユーザーの画面に最も適合する画像を読み込むことで通信帯域を節約し、ページの読み込みをより速くすることができる。</p>
+                    <p>また、特定の形式に対応していないブラウザーに対して、代替画像形式を提供する。</p>
+                    <picture>
+                        <sourc srcset="cafe_cocoa.png" media="(min-width: 800px)">
+                        <img src="https://4.bp.blogspot.com/-g3SVR1HdnXs/USNoFPPqt0I/AAAAAAAANQw/EKjMUi53SfA/s1600/cafe_cocoa.png" alt="">
+                    </picture>
+                </li>
+                <li>Canvas要素
+                    <p>CanvasスクリプティングAPIや WebGL APIを使用して、グラフィックやアニメーションを描画することができる。</p>
+                    <canvas width="600" height="200">
+                        キャンバスの表示内容を説明する代替テキスト。 
+                    </canvas>
+                </li>
+            </ul>
+        </details>
+        
+        <hr>
+        
+        <details>
+            <summary>対話型要素</summary>
+            <ul class="andmore">
+                <li class="datalist">
+                    input要素、datalist要素、option要素
+                    <p>
+                        <label for="data-list">input要素、datalist要素、option要素について:</label>
+                        <input list="datali" id="data-list">
+                        <datalist id="datali">
+                            <option value="input要素はテキスト入力欄や実行ボタン等、フォームを構成する部品を表す。"></option>
+                            <option value="datalist要素は候補となるデータリストをoption要素で定義する。">
+                            <option value="option要素は、select要素、optgroup要素、datalist要素内で使用される。">
+                            <option value="option要素は、項目を定義するために使用される。">
+                            <option value="option要素はポップアップのメニュー項目や、その他の項目の一覧を表す。">
+                        </datalist>
+                    </p>
+                </li>
+                <li>form要素群
+                    <form action="フォーム経由で送信された情報を処理するプログラムのURI記入欄" oninput="result.value=parseInt(temperature.value)">
+                        <fieldset>
+                            <legend>legend要素は、親要素であるfieldsetの内容のキャプションを表す。（以下、例）</legend>
+                            <label for="name">名前を入力してください。</label>
+                            <input type="text" name="name" id="name">
+                            <hr>
+                            <label for="cocoa">好きなココアはなんですか。</label>
+                            <select id="cocoa">
+                                <optgroup label="森永">
+                                    <option>ミルクココア</option>
+                                    <option>cacao70%</option>
+                                    <option>純ココア</option>
+                                </optgroup>
+                                <optgroup label="バンホーテン">
+                                    <option>ピュア ココア</option>
+                                    <option>ミルク ココア</option>
+                                    <option>プロテイン ココア</option>
+                                </optgroup>
+                                <optgroup label="その他">
+                                    <option>その他</option>
+                                    <option>optgroupは選択肢のグループを作成する。</option>
+                                </optgroup>
+                            </select>
+                            <hr>
+                                <label for="temperature">あなたはどのくらいの温かさでココアを飲みますか。(0〜100°C)</label>
+                                <input type="range" list="temp-memori" name="temperature" id="temperature" min="0" max="100" value="50">
+                                <datalist id="temp-memori">
+                                    <option value="0" label="0°C">ice</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50" label="50°C">50</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                    <option value="80">80</option>
+                                    <option value="90">90</option>
+                                    <option value="100" label="100°C">very hot</option>
+                                </datalist>
+                                <output for="temperature" name="result">50</output>°Cと回答しました。
+                        </fieldset>
+                    </form>
+                </li>
+                <li>
+                    meter要素
+                    <p>meterタグは下限や上限などが予め分かっている場合の、規定範囲内の測定値を示す際に使用する。</p>
+                    <p>ただし進行状況を示すのに使用する場合は、progressタグを使用する。</p>
+                    <p>例）アンケート集計結果 Q1.好きなココアはなんですか</p>
+                    <ul class="meter">
+                        <li><label for="milkco">森永　ミルクココア : </label><meter id="milkco" min="0" max="90" value="52">90人中42人が選択</meter></li>
+                        <li><label for="cacao70%">森永　cacao70% : </label><meter id="cacao70%" min="0" max="90" value="8">90人中8人が選択</meter></li>
+                        <li><label for="pureco">バンホーテン　ピュア ココア : </label><meter id="pureco" min="0" max="90" value="30">90人中30人が選択</meter></li>
+                    </ul>
+                </li>
+                <li class="textarea">
+                    textarea要素
+                    <p>
+                        <label>textarea要素は、複数行のプレーンテキスト編集コントロールを表す。</label>
+                        <textarea id="textarea" name="textarea" rows="3" cols="150">レビューのコメントやお問い合わせフォームのように、ユーザーが大量の自由記述テキストを入力できるようにするために使用する。
+                            例）コメントを入力してください。
+                        </textarea>
+                    </p>
+                </li>
+            </ul>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>そのほかの要素</summary>
+            <ul class="andmore">
+                <li>q要素
+                    <p>q要素は <q>行内の引用（段落区切りをまたがない短い引用)</q> であることを表す。長文の引用には、blockquote要素を使用する。</p>
+                </li>
+                <li>samp要素
+                    <p>samp要素は、プログラムやコンピュータシステムからの出力内容をサンプルとして提示したい場合に使用する。よく &lt;pre&gt; や &lt;kbd&gt; と共に使用される。</p>
+                    <p>例）品切れの場合は <samp>只今品切れ中です。次の入荷日は<time datatime="2021-03-04 10:30:00">3月4日</time>です。 </samp>と表示されます。</p>
+                </li>
+                <li>span要素
+                    <p>span要素は記述コンテンツの汎用的な行内コンテナーであり、<span class=span> div要素 (=ブロック要素) のインライン要素バージョン </span> 。</p>
+                </li>
+                <li>var要素
+                    <p>var要素は数式やプログラムコード内の変数の名前を表す。よく &lt;code&gt;、&lt;kbd&gt;、&lt;samp&gt; と共に使用される。</p>
+                    <p>例）当期使用金額は <var> 期首在庫金額 </var> と <var> 期間内の購入金額 </var> の和から <var> 期末在庫金額 </var> を引いた値です。</p>
+                </li>
+                <li>wbr要素
+                    <p>wbr要素はテキスト内でブラウザーが任意で改行してよい位置を表す。必要のない場合は改行はされない。</p>
+                    <p class="jugem">例1）寿限無<wbr>寿限無<wbr>五劫のすりきれ<wbr>海砂利水魚の<wbr>水行末<wbr>雲来末<wbr>風来末<wbr>食う寝るところに住むところ<wbr>やぶらこうじのぶらこうじ<wbr>パイポパイポパイポの<wbr>シューリンガン<wbr>シューリンガンの<wbr>グーリンダイ<wbr>グーリンダイの<wbr>ポンポコピーのポンポコナの長久命の長助(特に改行されない)</p>
+                    <p class="long-url">例2）http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.example<wbr>.com/With<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages</p>
+                </li>
+                <li>del要素とins要素
+                    <p>del要素は文書から <del>追加された</del> <ins>削除された</ins> 文字列の範囲を表す。反対に、ins要素は文書に <del>削除された</del> <ins>追加された</ins> 文字列を表す。</p>
+                </li>
+            </ul>
+        </details>
+
+
+        <script src="exercise4.js">
+            document.write('スクリプトは実行されています。');
+        </script>
+        <noscript>
+            <p>スクリプトが実行されていない場合に表示するHTMLを定義する。scriptが実行されている場合は無視される。</p>
+        </noscript>
+        
+    </body>
+</html>
